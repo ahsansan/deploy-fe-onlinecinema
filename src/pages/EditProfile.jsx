@@ -82,7 +82,7 @@ export default () => {
       const user = response.data.data.user;
 
       setForm({
-        image: `http://localhost:5000/uploads/${user.image}`,
+        image: `https://onlinecinema-be-ahsan.herokuapp.com/uploads/${user.image}`,
         fullName: user.fullName,
         email: user.email,
         phone: user.phone,

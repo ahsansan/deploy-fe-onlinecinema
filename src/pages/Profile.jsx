@@ -15,7 +15,7 @@ export default () => {
     Aos.init({ duration: 1000 });
   }, []);
 
-  const path = "http://localhost:5000/uploads/";
+  const path = "https://onlinecinema-be-ahsan.herokuapp.com/uploads/";
   const [profile, setProfile] = useState({});
   const [isError, setIsError] = useState(false);
   const [trans, setTrans] = useState([]);

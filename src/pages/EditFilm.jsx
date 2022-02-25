@@ -58,7 +58,7 @@ export default () => {
       const { film } = resp.data.data;
       setForm({
         title: film.title,
-        tumbnail: `http://localhost:5000/uploads/${film.tumbnail}`,
+        tumbnail: `https://onlinecinema-be-ahsan.herokuapp.com/uploads/${film.tumbnail}`,
         price: film.price,
         description: film.description,
         filmUrl: film.filmUrl,

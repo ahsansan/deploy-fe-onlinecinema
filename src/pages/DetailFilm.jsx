@@ -79,7 +79,7 @@ export default () => {
         <div className="d-flex justify-content-between">
           <div>
             <img
-              src={`http://localhost:5000/uploads/${film.tumbnail}`}
+              src={`https://onlinecinema-be-ahsan.herokuapp.com/uploads/${film.tumbnail}`}
               alt="thumbnail"
               className="tumbnail-film-detail"
             />

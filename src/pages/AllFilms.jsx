@@ -93,7 +93,7 @@ export default () => {
                 <td>{film.title}</td>
                 <td>
                   <img
-                    src={`http://localhost:5000/uploads/${film.tumbnail}`}
+                    src={`https://onlinecinema-be-ahsan.herokuapp.com/uploads/${film.tumbnail}`}
                     alt="tumbnail"
                     width={200}
                   />
