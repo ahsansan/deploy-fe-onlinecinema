@@ -82,24 +82,30 @@ export default () => {
             <th>Action</th>
           </tr>
         </thead>
-        <tbody>
-          {categories.map((ct, index) => (
-            <tr key={ct.id}>
-              <td>{index + 1}</td>
-              <td>{ct.name}</td>
-              <td>
-                <button
-                  onClick={() => {
-                    handleDelete(ct.id);
-                  }}
-                  className="delete-category"
-                >
-                  Delete Category
-                </button>
-              </td>
-            </tr>
-          ))}
-        </tbody>
+        {categories.length > 0 ? (
+          <tbody>
+            {categories.map((ct, index) => (
+              <tr key={ct.id}>
+                <td>{index + 1}</td>
+                <td>{ct.name}</td>
+                <td>
+                  <button
+                    onClick={() => {
+                      handleDelete(ct.id);
+                    }}
+                    className="delete-category"
+                  >
+                    Delete Category
+                  </button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        ) : (
+          <div>
+            <p>You dont have any category</p>
+          </div>
+        )}
         {isOpenAdd && (
           <AddCategory
             isOpen={isOpenAdd}

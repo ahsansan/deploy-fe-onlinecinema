@@ -85,47 +85,53 @@ export default () => {
             <th>Action</th>
           </tr>
         </thead>
-        <tbody>
-          {films.map((film, index) => (
-            <tr key={film.id}>
-              <td>{index + 1}</td>
-              <td>{film.title}</td>
-              <td>
-                <img
-                  src={`http://localhost:5000/uploads/${film.tumbnail}`}
-                  alt="tumbnail"
-                  width={200}
-                />
-              </td>
-              <td>{film.category.name}</td>
-              <td>{film.description}</td>
-              <td>
-                <DropdownButton
-                  id="dropdown-button"
-                  bsPrefix="btn-action-menu"
-                  title=""
-                >
-                  <Dropdown.Item
-                    className="action-container"
-                    style={{ color: "green" }}
-                    onClick={() => goTo(`/edit-film/${film.id}`)}
+        {films.length > 0 ? (
+          <tbody>
+            {films.map((film, index) => (
+              <tr key={film.id}>
+                <td>{index + 1}</td>
+                <td>{film.title}</td>
+                <td>
+                  <img
+                    src={`http://localhost:5000/uploads/${film.tumbnail}`}
+                    alt="tumbnail"
+                    width={200}
+                  />
+                </td>
+                <td>{film.category.name}</td>
+                <td>{film.description}</td>
+                <td>
+                  <DropdownButton
+                    id="dropdown-button"
+                    bsPrefix="btn-action-menu"
+                    title=""
                   >
-                    Edit Film
-                  </Dropdown.Item>
-                  <Dropdown.Item
-                    onClick={() => {
-                      handleDelete(film.id);
-                    }}
-                    className="action-container"
-                    style={{ color: "red" }}
-                  >
-                    Delete Film
-                  </Dropdown.Item>
-                </DropdownButton>
-              </td>
-            </tr>
-          ))}
-        </tbody>
+                    <Dropdown.Item
+                      className="action-container"
+                      style={{ color: "green" }}
+                      onClick={() => goTo(`/edit-film/${film.id}`)}
+                    >
+                      Edit Film
+                    </Dropdown.Item>
+                    <Dropdown.Item
+                      onClick={() => {
+                        handleDelete(film.id);
+                      }}
+                      className="action-container"
+                      style={{ color: "red" }}
+                    >
+                      Delete Film
+                    </Dropdown.Item>
+                  </DropdownButton>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        ) : (
+          <div>
+            <p>you don't have any film</p>
+          </div>
+        )}
         <DeleteFilm
           setConfirmDelete={setConfirmDelete}
           show={show}
