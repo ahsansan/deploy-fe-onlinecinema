@@ -24,6 +24,18 @@ export default () => {
   const [isOpenAdd, setOpenAdd] = useState(false);
   const handleAdd = (datanya) => setOpenAdd(datanya);
 
+  useEffect(() => {
+    getCategories();
+  }, []);
+
+  useEffect(() => {
+    if (confirmDelete) {
+      handleClose();
+      deleteById(idDelete);
+      setConfirmDelete(null);
+    }
+  }, [confirmDelete]);
+
   const getCategories = async () => {
     try {
       const resp = await API.get(`/categories`);
@@ -33,10 +45,6 @@ export default () => {
       setIsError(true);
     }
   };
-
-  useEffect(() => {
-    getCategories();
-  }, []);
 
   if (isError) {
     return <NotFound />;
@@ -55,14 +63,6 @@ export default () => {
       console.log(error);
     }
   };
-
-  useEffect(() => {
-    if (confirmDelete) {
-      handleClose();
-      deleteById(idDelete);
-      setConfirmDelete(null);
-    }
-  }, [confirmDelete]);
 
   return (
     <Container

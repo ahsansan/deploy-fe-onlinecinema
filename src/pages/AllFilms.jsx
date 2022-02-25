@@ -13,12 +13,6 @@ export default () => {
     Aos.init({ duration: 1000 });
   }, []);
 
-  const router = useNavigate();
-
-  const goTo = (path) => {
-    router(path);
-  };
-
   const [films, setFilms] = useState([]);
   const [isError, setIsError] = useState(false);
   const [idDelete, setIdDelete] = useState(null);
@@ -26,6 +20,18 @@ export default () => {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+
+  useEffect(() => {
+    getFilms();
+  }, []);
+
+  useEffect(() => {
+    if (confirmDelete) {
+      handleClose();
+      deleteById(idDelete);
+      setConfirmDelete(null);
+    }
+  }, [confirmDelete]);
 
   const getFilms = async () => {
     try {
@@ -37,9 +43,11 @@ export default () => {
     }
   };
 
-  useEffect(() => {
-    getFilms();
-  }, []);
+  const router = useNavigate();
+
+  const goTo = (path) => {
+    router(path);
+  };
 
   if (isError) {
     return <NotFound />;
@@ -58,14 +66,6 @@ export default () => {
       console.log(error);
     }
   };
-
-  useEffect(() => {
-    if (confirmDelete) {
-      handleClose();
-      deleteById(idDelete);
-      setConfirmDelete(null);
-    }
-  }, [confirmDelete]);
 
   return (
     <Container
