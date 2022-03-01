@@ -17,6 +17,10 @@ export default () => {
     Aos.init({ duration: 1000 });
   }, []);
 
+  useEffect(() => {
+    getTransactions();
+  }, [msg.text]);
+
   const [transactions, setTransactions] = useState([]);
   const [isError, setIsError] = useState(false);
   const [msg, setMsg] = useState({ error: false, text: "" });
@@ -30,10 +34,6 @@ export default () => {
       setIsError(true);
     }
   };
-
-  useEffect(() => {
-    getTransactions();
-  }, [msg.text]);
 
   if (isError) {
     return <NotFound />;
