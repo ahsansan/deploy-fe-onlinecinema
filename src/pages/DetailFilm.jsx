@@ -79,7 +79,7 @@ export default () => {
         <div className="d-flex justify-content-between">
           <div>
             <img
-              src={film.tumbnail}
+              src={`${film.tumbnail}`}
               alt="thumbnail"
               className="tumbnail-film-detail"
             />
