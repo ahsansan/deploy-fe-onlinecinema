@@ -15,7 +15,6 @@ export default () => {
     Aos.init({ duration: 1000 });
   }, []);
 
-  const path = "https://onlinecinema-be-ahsan.herokuapp.com/uploads/";
   const [profile, setProfile] = useState({});
   const [isError, setIsError] = useState(false);
   const [trans, setTrans] = useState([]);
@@ -64,7 +63,7 @@ export default () => {
           <div className="d-flex justify-content-between align-item-center">
             <div className="d-flex flex-column justify-content-between">
               <img
-                src={path + `${profile.image}`}
+                src={`${profile.image}`}
                 alt="profile-pic"
                 className="image-profile"
                 width="180px"

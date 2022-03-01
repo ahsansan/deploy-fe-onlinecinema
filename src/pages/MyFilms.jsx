@@ -48,7 +48,7 @@ export default () => {
               <img
                 className="my-film-list"
                 onClick={() => router(`/film/${film.idFilm}`)}
-                src={`https://onlinecinema-be-ahsan.herokuapp.com/uploads/${film.film.tumbnail}`}
+                src={`${film.film.tumbnail}`}
                 alt={film.film.title}
                 width="180px"
                 height="250px"

@@ -17,13 +17,13 @@ export default () => {
     Aos.init({ duration: 1000 });
   }, []);
 
-  useEffect(() => {
-    getTransactions();
-  }, [msg.text]);
-
   const [transactions, setTransactions] = useState([]);
   const [isError, setIsError] = useState(false);
   const [msg, setMsg] = useState({ error: false, text: "" });
+
+  useEffect(() => {
+    getTransactions();
+  }, [msg.text]);
 
   const getTransactions = async () => {
     try {
@@ -85,7 +85,7 @@ export default () => {
               <td>{trans.user.fullName}</td>
               <td>
                 <a
-                  href={`https://onlinecinema-be-ahsan.herokuapp.com/uploads/${trans.transferProof}`}
+                  href={`${trans.transferProof}`}
                   target="_blank"
                   rel="noreferrer"
                   style={{ textDecoration: "none", color: "white" }}

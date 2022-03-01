@@ -92,11 +92,7 @@ export default () => {
                 <td>{index + 1}</td>
                 <td>{film.title}</td>
                 <td>
-                  <img
-                    src={`https://onlinecinema-be-ahsan.herokuapp.com/uploads/${film.tumbnail}`}
-                    alt="tumbnail"
-                    width={200}
-                  />
+                  <img src={`${film.tumbnail}`} alt="tumbnail" width={200} />
                 </td>
                 <td>{film.category.name}</td>
                 <td>{film.description}</td>
