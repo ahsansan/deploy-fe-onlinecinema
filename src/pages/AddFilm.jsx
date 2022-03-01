@@ -14,7 +14,7 @@ export default () => {
   const [form, setForm] = useState({
     title: "",
     tumbnail:
-      "https://onlinecinema-be-ahsan.herokuapp.com/uploads/prevtumb.png",
+      "https://res.cloudinary.com/kejepangan/image/upload/v1646118001/OnlineCinemaAhsan/prevtumb_n9aucl.png",
     price: "",
     description: "",
     filmUrl: "",

@@ -33,7 +33,7 @@ export default (props) => {
     fullName: "",
     phone: "",
     password: "",
-    image: "/v1646118000/OnlineCinemaAhsan/1645809652164-YinYang_as8jgv.jpg",
+    image: "",
   });
 
   // ketika di input
