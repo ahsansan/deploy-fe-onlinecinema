@@ -33,7 +33,6 @@ export default (props) => {
     fullName: "",
     phone: "",
     password: "",
-    image: "/v1646118000/OnlineCinemaAhsan/noname_r41cke.png",
   });
 
   // ketika di input

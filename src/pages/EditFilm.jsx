@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Alert, Container, Form } from "react-bootstrap";
 import { useNavigate, useParams } from "react-router-dom";
 import { API } from "../config/api";
+import EditTumbnail from "../components/EditTumbnail";
 import "../styles/addfilm.css";
 import Aos from "aos";
 import "aos/dist/aos.css";
@@ -13,7 +14,7 @@ export default () => {
 
   const [form, setForm] = useState({
     title: "",
-    tumbnail: "",
+    // tumbnail: "",
     price: "",
     description: "",
     filmUrl: "",
@@ -27,7 +28,9 @@ export default () => {
 
   const [status, setStatus] = useState({});
 
-  const [preview, setPreview] = useState("");
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
   parseInt(`${form.idCategory}`);
 
@@ -58,7 +61,7 @@ export default () => {
       const { film } = resp.data.data;
       setForm({
         title: film.title,
-        tumbnail: `${film.tumbnail}`,
+        // tumbnail: `${film.tumbnail}`,
         price: film.price,
         description: film.description,
         filmUrl: film.filmUrl,
@@ -87,7 +90,7 @@ export default () => {
 
       const formData = new FormData();
       formData.set("title", form.title);
-      formData.set("tumbnail", form.tumbnail[0], form.tumbnail[0].name);
+      // formData.set("tumbnail", form.tumbnail[0], form.tumbnail[0].name);
       formData.set("price", form.price);
       formData.set("description", form.description);
       formData.set("filmUrl", form.filmUrl);
@@ -139,6 +142,11 @@ export default () => {
             />
           </div>
           <div>
+            <button onClick={handleShow} className="btn-add-film">
+              Edit Tumbnail
+            </button>
+          </div>
+          {/* <div>
             <label
               htmlFor="tumbnail"
               className="d-flex flex-row tombol-tumbnail"
@@ -159,9 +167,9 @@ export default () => {
               name="tumbnail"
               hidden
             />
-          </div>
+          </div> */}
         </div>
-        <div className="preview-film">
+        {/* <div className="preview-film">
           {preview ? (
             <img
               src={preview}
@@ -177,7 +185,7 @@ export default () => {
               width="20%"
             />
           )}
-        </div>
+        </div> */}
         <div>
           <select
             id="select"
@@ -230,6 +238,7 @@ export default () => {
             Edit Film
           </button>
         </div>
+        <EditTumbnail show={show} handleClose={handleClose} idFilm={id} />
       </Form>
     </Container>
   );
