@@ -21,6 +21,8 @@
 .pointer {
   cursor: pointer;
   border-radius: 5px;
+  width: 180px;
+  height: 250px;
 }
 
 .list-film {
@@ -66,6 +68,37 @@
   font-family: Avenir;
   font-size: 18px;
   font-weight: 900;
+}
+
+/* Responsive */
+
+@media screen and (max-width: 600px) {
+  .container-highlight {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .highlight-film {
+    width: 400px;
+    height: 300px;
+    padding: 10px 20px;
+    background: linear-gradient(90deg, #121212 0%, rgba(18, 18, 18, 0) 47.02%);
+    border-radius: 5px;
+  }
+  .judul-film-highlight {
+    font-family: Avenir;
+    font-size: 28px;
+    font-weight: 900;
+    color: #a52620;
+  }
+  .deskripsi-film-highlight {
+    display: none;
+  }
+  .pointer {
+    height: 90%;
+    width: 90%;
+  }
 }
 
 /* Detail */
