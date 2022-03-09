@@ -73,6 +73,9 @@
 /* Responsive */
 
 @media screen and (max-width: 600px) {
+  .container-utama {
+    margin-top: 15px;
+  }
   .container-highlight {
     display: flex;
     flex-direction: column;
