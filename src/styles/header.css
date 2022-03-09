@@ -161,6 +161,9 @@ span {
   .header-logo {
     padding-left: 10px;
   }
+  .header-menu {
+    padding-right: 10px;
+  }
   .logo-image {
     height: 45px;
   }
