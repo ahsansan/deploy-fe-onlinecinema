@@ -158,6 +158,9 @@ span {
 /* Responsive */
 
 @media only screen and (max-width: 600px) {
+  .header-logo {
+    padding-left: 10px;
+  }
   .logo-image {
     height: 45px;
   }
@@ -167,6 +170,7 @@ span {
   .login-auth-button {
     background-color: #cd2e71 !important;
     font-size: 15px !important;
+    padding: 5px 25px !important;
   }
   .info-modal .modal-content {
     background-color: #1f1f1f !important;
