@@ -14,6 +14,10 @@
   align-items: center;
 }
 
+.logo-image {
+  height: 55px;
+}
+
 .header-menu {
   flex: 1;
   padding-right: 50px;
@@ -149,4 +153,26 @@
 
 span {
   cursor: pointer;
+}
+
+/* Responsive */
+
+@media only screen and (max-width: 600px) {
+  .logo-image {
+    height: 45px;
+  }
+  .register-auth-button {
+    display: none;
+  }
+  .login-auth-button {
+    background-color: #cd2e71 !important;
+    font-size: 15px !important;
+  }
+  .info-modal .modal-content {
+    background-color: #1f1f1f !important;
+    border: 0 solid black !important;
+    border-radius: 5px !important;
+    padding: 15px 5px !important;
+    margin-top: 80px;
+  }
 }
