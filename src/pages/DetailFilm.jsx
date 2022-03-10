@@ -76,7 +76,7 @@ export default () => {
             Please buy this film if you want watch
           </Toast.Body>
         </Toast>
-        <div className="d-flex justify-content-between">
+        <div className="container-isi-detail">
           <div>
             <img
               src={`${film.tumbnail}`}
@@ -85,7 +85,7 @@ export default () => {
             />
           </div>
           <div>
-            <div className="d-flex align-items-center justify-content-between">
+            <div className="detail-judul-harga">
               <h1 className="mb-4 judul-film-detail">{film.title}</h1>
               {(trans === "undefined" ||
                 trans === "" ||
@@ -114,15 +114,14 @@ export default () => {
                   ? "overlay"
                   : ""
               }
-              width="640"
-              height="360"
               src={film.filmUrl}
               title={film.title}
               frameBorder="0"
+              className="youtube-class"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
             ></iframe>
-            <div style={{ width: 640, marginTop: "2rem" }}>
+            <div className="genre-price-desk">
               <h4 className="detail-genre">{film.category.name}</h4>
               {(trans === "undefined" ||
                 trans === "" ||
