@@ -335,4 +335,9 @@
     border-radius: 10px !important;
     padding: 15px 10px !important;
   }
+  .judul-my-film {
+    font-family: Avenir;
+    font-size: 25px;
+    font-weight: 700;
+  }
 }

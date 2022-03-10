@@ -107,9 +107,9 @@ export default () => {
       >
         <div className="preview-film">
           {preview ? (
-            <img src={preview} className="img-fluid rounded" width="20%" />
+            <img src={preview} className="img-fluid rounded" width="30%" />
           ) : (
-            <img src={image} className="img-fluid rounded" width="15%" />
+            <img src={image} className="img-fluid rounded" width="30%" />
           )}
         </div>
         <div>

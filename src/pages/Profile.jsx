@@ -57,8 +57,8 @@ export default () => {
 
   return (
     <Container className="mt-5" style={{ minHeight: "71vh" }}>
-      <div className="d-flex justify-content-between align-item-center">
-        <div data-aos="fade-right">
+      <div className="container-profile-utama">
+        <div className="mb-5" data-aos="fade-right">
           <h1 className="mb-4 my-profile">My Profile</h1>
           <div className="d-flex justify-content-between align-item-center">
             <div className="d-flex flex-column justify-content-between">
