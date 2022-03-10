@@ -77,14 +77,14 @@ export default () => {
           </Toast.Body>
         </Toast>
         <div className="container-isi-detail">
-          <div>
+          <div className="isi-detail">
             <img
               src={`${film.tumbnail}`}
               alt="thumbnail"
               className="tumbnail-film-detail"
             />
           </div>
-          <div>
+          <div className="isi-detail">
             <div className="detail-judul-harga">
               <h1 className="mb-4 judul-film-detail">{film.title}</h1>
               {(trans === "undefined" ||

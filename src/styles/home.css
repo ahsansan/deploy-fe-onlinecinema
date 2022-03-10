@@ -260,6 +260,10 @@
   margin-top: 2rem;
 }
 
+.isi-detail {
+  flex: 1;
+}
+
 /* Responsive */
 
 @media screen and (max-width: 600px) {
@@ -339,5 +343,9 @@
     font-family: Avenir;
     font-size: 25px;
     font-weight: 700;
+  }
+  .overlay {
+    width: 90%;
+    margin-left: 20px;
   }
 }

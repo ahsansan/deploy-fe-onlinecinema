@@ -99,7 +99,7 @@ export default () => {
               <Card
                 key={film.idFilm}
                 style={{
-                  width: "419px",
+                  width: "350px",
                   height: "auto",
                   marginBottom: "1rem",
                   backgroundColor: "#CD2E7170",
