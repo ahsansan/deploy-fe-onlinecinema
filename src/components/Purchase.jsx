@@ -9,9 +9,10 @@ export default ({ isVisible, onHide, filmId, title }) => {
     transferProof: "",
     idFilm: `${filmId}`,
   });
-
   const [status, setStatus] = useState({});
   const [preview, setPreview] = useState("");
+
+  parseInt(`${filmId}`);
 
   const handleOnChange = (e) => {
     setForm({
