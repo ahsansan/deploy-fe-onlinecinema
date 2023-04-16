@@ -104,6 +104,7 @@ export default () => {
           isVisible={isVisibleModal}
           onHide={() => setIsVisibleModal(false)}
           photoProfile={profile.image}
+          getUser={getUser}
         />
         {trans.length > 0 ? (
           <div data-aos="fade-left">

@@ -4,7 +4,7 @@ import { UserContext } from "../context/userContext";
 import { API } from "../config/api";
 import "../styles/home.css";
 
-export default ({ isVisible, onHide, photoProfile }) => {
+export default ({ isVisible, onHide, photoProfile, getUser }) => {
   const [form, setForm] = useState({
     image: "",
   });
@@ -51,7 +51,8 @@ export default ({ isVisible, onHide, photoProfile }) => {
       setTimeout(() => {
         onHide();
         setStatus({});
-      }, 1500);
+        getUser();
+      }, 500);
     } catch (error) {
       console.log(error);
       setStatus({
