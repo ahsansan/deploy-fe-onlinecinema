@@ -24,7 +24,6 @@ export default () => {
     email: "",
   });
 
-  const [preview, setPreview] = useState("");
   const [status, setStatus] = useState({});
 
   const { fullName, email, phone } = form;
@@ -34,11 +33,6 @@ export default () => {
       ...form,
       [e.target.name]: e.target.value,
     });
-
-    // if (e.target.type === "file") {
-    //   let url = URL.createObjectURL(e.target.files[0]);
-    //   setPreview(url);
-    // }
   };
 
   const handleOnSubmit = async () => {
@@ -50,12 +44,13 @@ export default () => {
       };
 
       const formData = new FormData();
-      // formData.set("image", form.image[0], form.image[0].name);
       formData.set("fullName", form.fullName);
       formData.set("email", form.email);
       formData.set("phone", form.phone);
 
-      await API.patch(`/user/${state.user.id}`, formData, config);
+      const body = JSON.stringify(formData);
+
+      await API.patch(`/user/${state.user.id}`, body, config);
 
       const response = await API.get("/check-auth");
 
@@ -85,7 +80,6 @@ export default () => {
       const user = response.data.data.user;
 
       setForm({
-        // image: `${user.image}`,
         fullName: user.fullName,
         email: user.email,
         phone: user.phone,

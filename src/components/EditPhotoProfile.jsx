@@ -48,6 +48,16 @@ export default ({ isVisible, onHide, photoProfile, getUser }) => {
         error: false,
       });
 
+      const response = await API.get("/check-auth");
+
+      let payload = response.data.data.user;
+      payload.token = localStorage.token;
+
+      dispatch({
+        type: "USER_SUCCESS",
+        payload,
+      });
+
       setTimeout(() => {
         onHide();
         setStatus({});
