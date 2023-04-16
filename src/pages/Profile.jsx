@@ -69,7 +69,7 @@ export default () => {
                 alt="profile-pic"
                 className="image-profile"
                 width="180px"
-                height="221.79px"
+                height="180px"
               />
               <button
                 className="tombol-edit-profile"
