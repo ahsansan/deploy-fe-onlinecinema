@@ -40,7 +40,7 @@ export default ({ isVisible, onHide, photoProfile, getUser }) => {
         form.image[0].name
       );
 
-      await API.patch(`/user/${state.user.id}`, formData, config);
+      await API.patch(`/profile-picture/${state.user.id}`, formData, config);
 
       setStatus({
         message:
