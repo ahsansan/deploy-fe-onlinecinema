@@ -46,7 +46,7 @@ export default () => {
     try {
       const config = {
         headers: {
-          "Content-type": "multipart/form-data",
+          "Content-type": "application/json",
         },
       };
 
