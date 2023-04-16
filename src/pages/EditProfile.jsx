@@ -19,7 +19,6 @@ export default () => {
   const router = useNavigate();
 
   const [form, setForm] = useState({
-    image: "",
     fullName: "",
     phone: "",
     email: "",
@@ -28,7 +27,7 @@ export default () => {
   const [preview, setPreview] = useState("");
   const [status, setStatus] = useState({});
 
-  const { image, fullName, email, phone } = form;
+  const { fullName, email, phone } = form;
 
   const handleOnChange = (e) => {
     setForm({
@@ -37,10 +36,10 @@ export default () => {
         e.target.type === "file" ? e.target.files : e.target.value,
     });
 
-    if (e.target.type === "file") {
-      let url = URL.createObjectURL(e.target.files[0]);
-      setPreview(url);
-    }
+    // if (e.target.type === "file") {
+    //   let url = URL.createObjectURL(e.target.files[0]);
+    //   setPreview(url);
+    // }
   };
 
   const handleOnSubmit = async () => {
@@ -52,7 +51,7 @@ export default () => {
       };
 
       const formData = new FormData();
-      formData.set("image", form.image[0], form.image[0].name);
+      // formData.set("image", form.image[0], form.image[0].name);
       formData.set("fullName", form.fullName);
       formData.set("email", form.email);
       formData.set("phone", form.phone);
@@ -87,7 +86,7 @@ export default () => {
       const user = response.data.data.user;
 
       setForm({
-        image: `${user.image}`,
+        // image: `${user.image}`,
         fullName: user.fullName,
         email: user.email,
         phone: user.phone,
@@ -111,7 +110,7 @@ export default () => {
           handleOnSubmit();
         }}
       >
-        <div className="preview-film">
+        {/*<div className="preview-film">
           {preview ? (
             <img src={preview} className="img-fluid rounded" width="30%" />
           ) : (
@@ -129,7 +128,7 @@ export default () => {
             name="image"
             hidden
           />
-        </div>
+        </div>*/}
         <div>
           <input
             type="text"
