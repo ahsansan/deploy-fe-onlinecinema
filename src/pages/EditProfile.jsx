@@ -39,16 +39,19 @@ export default () => {
     try {
       const config = {
         headers: {
-          "Content-type": "multipart/form-data",
+          "Content-type": "application/json",
         },
       };
 
-      const formData = new FormData();
-      formData.set("fullName", form.fullName);
-      formData.set("email", form.email);
-      formData.set("phone", form.phone);
+      const formData = {
+        fullName: form.fullName,
+        email: form.email,
+        phone: form.phone
+      }
 
-      await API.patch(`/user/${state.user.id}`, formData, config);
+      const formSubmit = JSON.stringify(formData);
+
+      await API.patch(`/user/${state.user.id}`, formSubmit, config);
 
       const response = await API.get("/check-auth");
 
