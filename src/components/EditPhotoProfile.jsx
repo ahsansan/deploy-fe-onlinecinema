@@ -6,7 +6,7 @@ import "../styles/home.css";
 
 export default ({ isVisible, onHide, photoProfile }) => {
   const [form, setForm] = useState({
-    image: photoProfile,
+    image: "",
   });
   const [status, setStatus] = useState({});
   const [preview, setPreview] = useState("");
@@ -80,31 +80,12 @@ export default ({ isVisible, onHide, photoProfile }) => {
             handleOnSubmit();
           }}
         >
-          {preview ? (
-            <img
-              src={preview}
-              className="img-fluid rounded preview-payment"
-              width="25%"
-            />
-          ) : (
-            <img
-              src={form.image}
-              className="img-fluid rounded preview-payment"
-              width="25%"
-            />
-          )}
           <div>
             <label
               htmlFor="input-photo"
               className="d-flex flex-row tombol-upload-payment"
             >
-              <p>Select your profile picture</p>
-              <img
-                src="/attachment.svg"
-                width={25}
-                height={25}
-                style={{ marginLeft: "10px" }}
-              />
+              <p>Choose file</p>
             </label>
             <input
               type="file"
@@ -114,6 +95,19 @@ export default ({ isVisible, onHide, photoProfile }) => {
               hidden
             />
           </div>
+          {preview ? (
+            <img
+              src={preview}
+              className="img-fluid rounded preview-payment"
+              width="25%"
+            />
+          ) : (
+            <img
+              src={photoProfile}
+              className="img-fluid rounded preview-payment"
+              width="25%"
+            />
+          )}
           <button type="submit" className="tombol-add-payment">
             Update
           </button>

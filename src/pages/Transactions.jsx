@@ -90,7 +90,7 @@ export default () => {
                   rel="noreferrer"
                   style={{ textDecoration: "none", color: "white" }}
                 >
-                  Bukti transfer
+                  <strong>Bukti transfer</strong>
                 </a>
               </td>
               <td>{trans.film.title}</td>

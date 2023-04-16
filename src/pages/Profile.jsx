@@ -75,7 +75,7 @@ export default () => {
                 className="tombol-edit-profile"
                 onClick={() => setIsVisibleModal(true)}
               >
-                Edit Profile
+                Change Photo
               </button>
               <button
                 className="tombol-edit-profile"
