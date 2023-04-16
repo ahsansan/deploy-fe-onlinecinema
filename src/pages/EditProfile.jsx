@@ -48,7 +48,7 @@ export default () => {
       formData.set("email", form.email);
       formData.set("phone", form.phone);
 
-      await API.patch(`/user/${state.user.id}`, body, config);
+      await API.patch(`/user/${state.user.id}`, formData, config);
 
       const response = await API.get("/check-auth");
 
