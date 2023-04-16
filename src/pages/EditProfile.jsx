@@ -32,8 +32,7 @@ export default () => {
   const handleOnChange = (e) => {
     setForm({
       ...form,
-      [e.target.name]:
-        e.target.type === "file" ? e.target.files : e.target.value,
+      [e.target.name]: e.target.value,
     });
 
     // if (e.target.type === "file") {
