@@ -73,7 +73,7 @@ export default () => {
               />
               <button
                 className="tombol-edit-profile"
-                onClick={() => setIsVisibleModal(true);}
+                onClick={() => setIsVisibleModal(true)}
               >
                 Edit Profile
               </button>
