@@ -48,8 +48,6 @@ export default () => {
       formData.set("email", form.email);
       formData.set("phone", form.phone);
 
-      const body = JSON.stringify(formData);
-
       await API.patch(`/user/${state.user.id}`, body, config);
 
       const response = await API.get("/check-auth");
