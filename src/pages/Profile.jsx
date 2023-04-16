@@ -4,6 +4,7 @@ import { API } from "../config/api";
 import { useNavigate } from "react-router-dom";
 import { convertToRupiah } from "../components/utils/rupiah";
 import { getFullTime } from "../components/utils/date";
+import EditPhotoProfile from "../components/EditPhotoProfile"
 import NotFound from "../components/NotFound";
 import { UserContext } from "../context/userContext";
 import "../styles/profile.css";
@@ -18,6 +19,7 @@ export default () => {
   const [profile, setProfile] = useState({});
   const [isError, setIsError] = useState(false);
   const [trans, setTrans] = useState([]);
+  const [isVisibleModal, setIsVisibleModal] = useState(false);
 
   const [{ user }] = useContext(UserContext);
 
@@ -71,6 +73,12 @@ export default () => {
               />
               <button
                 className="tombol-edit-profile"
+                onClick={() => setIsVisibleModal(true);}
+              >
+                Edit Profile
+              </button>
+              <button
+                className="tombol-edit-profile"
                 onClick={() => router("/edit-profile")}
               >
                 Edit Profile
@@ -92,6 +100,11 @@ export default () => {
             </div>
           </div>
         </div>
+        <EditPhotoProfile
+          isVisible={isVisibleModal}
+          onHide={() => setIsVisibleModal(false)}
+          photoProfile={profile.image}
+        />
         {trans.length > 0 ? (
           <div data-aos="fade-left">
             <h1 className="mb-4 my-profile">History Transaction</h1>
