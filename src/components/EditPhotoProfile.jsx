@@ -1,5 +1,6 @@
 import { useState, useContext } from "react";
 import { Form, Modal, Alert } from "react-bootstrap";
+import { UserContext } from "../context/userContext";
 import { API } from "../config/api";
 import "../styles/home.css";
 
@@ -87,7 +88,7 @@ export default ({ isVisible, onHide, photoProfile }) => {
             />
           ) : (
             <img
-              src={image}
+              src={form.image}
               className="img-fluid rounded preview-payment"
               width="25%"
             />
