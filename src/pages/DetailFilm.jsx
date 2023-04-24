@@ -97,11 +97,10 @@ export default () => {
                 </button>
               )}
             </div>
-            {(trans === "undefined" ||
-              trans === "" ||
-              trans === null ||
-              trans.status === "Pending" ||
-              trans.status === "Canceled") && (
+            {(user.role === "admin" ||
+              trans.status === "Approved") ? (
+              <div />
+            ) : (
               <div onClick={() => setShow(true)} className="overlay" />
             )}
             <iframe
