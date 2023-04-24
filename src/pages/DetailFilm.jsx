@@ -106,13 +106,10 @@ export default () => {
             )}
             <iframe
               id={
-                trans === "undefined" ||
-                trans === "" ||
-                trans === null ||
-                trans.status === "Pending" ||
-                trans.status === "Canceled"
-                  ? "overlay"
-                  : ""
+                user.role === "admin" ||
+                trans.status === "Approved"
+                  ? ""
+                  : "overlay"
               }
               src={film.filmUrl}
               title={film.title}
