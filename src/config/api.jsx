@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export const API = axios.create({
-  baseURL: "https://be-online-cinema.onrender.com/api/cinema/v1/",
+  baseURL: "https://deploy-be-onlinecinema.vercel.app/api/cinema/v1/",
 });
 
 export const setAuthToken = (token) => {
